@@ -17,8 +17,6 @@
 </head>
 
 <body>
-
-
 <div class="container">
 
     <!-- 1th Section -->
@@ -26,16 +24,28 @@
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
             <div class="tm-flex-center pl-5 pr-5 pt-5 pb-5">
                 <div class="tm-md-flex-center">
-                    <h2 class="mb-4 tm-text-color-primary">Kalkulator CRC</h2>
-                    <p><span>Wprowadzona wartość: {{ $valueToConvert }}</span></p>
-                    <p> Wartość w postaci binarnej: {{ $valueInBinary }}</p>
-                    <a href="{{ asset('crc') }}" class="btn btn-primary float-lg-right tm-md-align-center">Powrót</a>
+                    <h2 class="mb-4 tm-text-color-primary">Kalkulator {{ $crcButtonId }}</h2>
+                    &nbsp
+                    <p><b>Wprowadzona wartość: </b>{{ $valueToConvert }}</p>
+                    <p><b>Wartość w postaci binarnej: </b>{{ $valueInBinary }}</p>
+                    <p><b>Wartość CRC: </b>{!! $crcValue !!}</p>
+{{--                    <p><b>Wartość CRC HEX: </b>0x{{ dechex($crcValue) }}</p>--}}
+                    <p><b>Wartość w postaci binarnej + CRC: </b>{!! $valueInBinaryAndCrc !!} </p>
+                    <p><b>Bity Hamminga: </b><span>{!! $hammingValue !!}</span></p>
+                    <p><b>Bity do zakłamania: </b> {{ $valueOfFirstIncorrectByte }}  {{ $valueOfSecondIncorrectByte }}
+                    {{ $valueOfThirdIncorrectByte }}  {{ $valueOfFourthIncorrectByte }}</p>
+                    <p><b>Ciąg po przekłamaniu: </b>{!! $incorrectHammingValue !!}</p>
+                    <p><b>Ciąg po korekcie Hamminga: </b>{!! $fixedHammingValue !!}</p>
+                    <p><b>Ciąg po usunięciu bitów Hamminga: </b>{!! $removedHammingValue !!} </p>
+                    <p><b>Wartość CRC po usunięciu bitów Hamminga: </b> {!! $checkCrcValue !!}</p>
+                    <p><b>Wartość po przesłaniu: </b> {{ utf8_encode($resultValue) }}</p>
+                    <a href="{{ asset('crc') }}" class="btn btn-primary float-lg-left tm-md-align-center">Powrót</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 text-xl-right text-md-center text-center mt-5 mt-lg-0 pr-lg-0">
-            <img src="img/image-02.jpg" alt="Image" class="img-fluid">
-        </div>
+{{--        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 text-xl-right text-md-center text-center mt-5 mt-lg-0 pr-lg-0">--}}
+{{--            <img src="img/image-02.jpg" alt="Image" class="img-fluid">--}}
+{{--        </div>--}}
     </section>
 
     <!-- Footer -->
@@ -62,6 +72,5 @@
     });
 
 </script>
-
 </body>
 </html>

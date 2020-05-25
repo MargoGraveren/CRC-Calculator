@@ -43,7 +43,12 @@
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <div class="tm-flex-center p-5">
                 <div class="tm-flex-center tm-flex-col">
-                    <h2 class="tm-text-color-primary mb-4">Tutaj info jakieś o tych CRC</h2>
+                    <h2 class="tm-text-color-primary mb-4">CRC</h2>
+                    <p>
+                        CRC<i>(ang.Cyclic Redundancy Code, Cyclic Redundancy Check)</i> jest to cykliczny kod nadmiarowy, system sum kontrolnych,
+                        który wykorzystywany jest do wykrywania przypadkowych błędów pojawiających się podczas
+                        przesyłania i magazynowania danych binarnych.
+                    </p>
                 </div>
             </div>
         </div>
@@ -57,9 +62,20 @@
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
             <div class="tm-flex-center p-5 tm-bg-color-primary">
                 <div class="tm-max-w-400 tm-flex-center tm-flex-col">
-                    <h2 class="tm-text-color-primary mb-4" style="color: white">CRC 16</h2>
+                    <h2 class="tm-text-color-primary mb-4" style="color: white">Opis działania</h2>
                     <!--<img src="img/image-04.jpg" alt="Image" class="rounded-circle mb-4">-->
-                    <p class="tm-text-color-white small tm-font-thin mb-0"></p>
+                    <p class="tm-text-color-white  tm-font-thin mb-0">
+                        1. Należy wprowadzić sygnał wejściowy. </br> Może być to dowolny ciąg znaków o dowolnej długości.
+                    </p>
+                    &nbsp
+                    <p class="tm-text-color-white  tm-font-thin mb-0">
+                        2. Należy wprowadzić przekłamane bity.
+                        </br> Nie jest to pole wymagane.
+                    </p>
+                    &nbsp
+                    <p class="tm-text-color-white  tm-font-thin mb-0">
+                        3. Należy wybrać rodzaj CRC.
+                    </p>
                 </div>
             </div>
         </div>
@@ -74,13 +90,38 @@
                         <span>Sygnał wejściowy</span>
                         <span class="border"></span>
                     </label>
+                    <h2 class="tm-text-color-primary mb-4">Bity do zakłamania</h2>
+                    <div style=" display: flex; flex-direction: row">
+                        <label class="form-group" style="width: 20%" >
+                            <input id="error1" type="number" class="form-control" name="error1" min="0">
+                            <span>Bit 1</span>
+                            <span class="border"></span>
+                        </label>
+                        <label class="form-group" style="width: 20%" >
+                            <input id="error2" type="number" class="form-control" name="error2" min="0">
+                            <span>Bit 2</span>
+                            <span class="border"></span>
+                        </label>
+                        <label class="form-group" style="width: 20%" >
+                            <input id="error3" type="number" class="form-control" name="error3" min="0">
+                            <span>Bit 3</span>
+                            <span class="border"></span>
+                        </label>
+                        <label class="form-group" style="width: 20%" >
+                            <input id="error4" type="number" class="form-control" name="error4" min="0">
+                            <span>Bit 4</span>
+                            <span class="border"></span>
+                        </label>
+                    </div>
                     <h2 class="tm-text-color-primary mb-4">Wybierz sygnał CRC</h2>
-                    <button type="submit" class="zmdi zmdi-arrow-right">CRC 16
-                    </button>
-                    <button type="submit" class="zmdi zmdi-arrow-right">CRC 16 REVERSE
-                    </button>
-                    <button type="submit" class="zmdi zmdi-arrow-right">CRC 32
-                    </button>
+                    <div style="display: flex; flex-direction: row">
+                        <button type="submit" class="zmdi zmdi-arrow-right" name="crcButton" value="CRC 16" >CRC 16
+                        </button>
+                        <button type="submit" class="zmdi zmdi-arrow-right" name="crcButton" value="CRC 16 SDLC" >CRC 16 SDLC
+                        </button>
+                        <button type="submit" class="zmdi zmdi-arrow-right" name="crcButton" value="CRC 32" >CRC 32
+                        </button>
+                    </div>
                     {!! Form::close() !!}
                 </div>
             </div>

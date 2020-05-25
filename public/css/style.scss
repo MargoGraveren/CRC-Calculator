@@ -61,6 +61,22 @@ a:hover {
     -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
     -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
+.hamming {
+    color: green;
+    font-weight: bold;
+}
+.CRC {
+    color: purple;
+    font-weight: bold;
+}
+.errorBit {
+    color: red;
+    font-weight: bold;
+}
+.fixedBit {
+    color: blue;
+    font-weight: bold;
+}
 textarea {
 	resize: none;
 }
@@ -76,6 +92,7 @@ p {
 	padding: 0 10px;
 	margin-bottom: 55px;
 	line-height: 1.8;
+    word-break: break-all;
 }
 .form-group {
 	position: relative;
@@ -188,11 +205,11 @@ button {
 		}
 	}
 }
-@media (max-width: 1199px) { 
-	
+@media (max-width: 1199px) {
+
 }
 @media (max-width: 991px) {
-	
+
 }
 @media (max-width: 767px) {
 	h3 {
